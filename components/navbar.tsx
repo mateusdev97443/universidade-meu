@@ -11,13 +11,15 @@ export function Navbar() {
           <span className="text-eletric">NEXUS</span> <span className="text-ice">Front-End</span>
         </Link>
         <div className="hidden md:flex gap-6">
-          <Link href="/jornada">Jornada</Link>
-          <Link href="/painel">Painel</Link>
-          <Link href="/mestres-ia">Mestres IA</Link>
-          <Link href="/pratica">Prática</Link>
-          <Link href="/entrevistas">Entrevistas</Link>
-          <Link href="/carreira">Carreira</Link>
-          <button onClick={toggle} className="text-eletric text-sm">🧘 Modo Imersão</button>
+          <Link href="/jornada" className="hover:text-eletric transition">Jornada</Link>
+          <Link href="/painel" className="hover:text-eletric transition">Painel</Link>
+          <Link href="/mestres-ia" className="hover:text-eletric transition">Mestres IA</Link>
+          <Link href="/pratica" className="hover:text-eletric transition">Prática</Link>
+          <Link href="/entrevistas" className="hover:text-eletric transition">Entrevistas</Link>
+          <Link href="/carreira" className="hover:text-eletric transition">Carreira</Link>
+          <button onClick={toggle} className="text-eletric text-sm border border-eletric/30 rounded-full px-3 py-1 hover:bg-eletric/10 transition">
+            🧘 Modo Imersão
+          </button>
         </div>
       </div>
     </nav>
