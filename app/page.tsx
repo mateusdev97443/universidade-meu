@@ -1,3 +1,6 @@
+cd ~/universidade-meu
+
+cat > app/page.tsx << 'EOF'
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -6,8 +9,6 @@ export default function Home() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-obsidian">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,229,255,0.05),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20" />
-      
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -64,3 +65,6 @@ export default function Home() {
     </div>
   );
 }
+EOF
+
+echo "✅ Landing page corrigida (Torne-se Mestre e Ver Mapa)"
