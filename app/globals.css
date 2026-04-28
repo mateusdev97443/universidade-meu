@@ -1,10 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-obsidian: #0B0B0F;
+  --color-obsidian: #0A0A0F;
+  --color-obsidian-card: #111118;
   --color-eletric: #00E5FF;
-  --color-ice: #F0F4F8;
-  --color-emerald: #50C878;
+  --color-purple: #A855F7;
+  --color-emerald: #10B981;
+  --color-ice: #E6EDF3;
+  --color-ice-muted: #9CA3AF;
+  --color-border: #2A2A35;
 }
 
 body {
