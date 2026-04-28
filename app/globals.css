@@ -1,6 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@layer base {
-  body { @apply bg-obsidian text-ice font-sans antialiased; }
+@import "tailwindcss";
+
+@theme {
+  --color-obsidian: #0B0B0F;
+  --color-eletric: #00E5FF;
+  --color-ice: #F0F4F8;
+  --color-emerald: #50C878;
+}
+
+body {
+  background-color: var(--color-obsidian);
+  color: var(--color-ice);
+  font-family: 'Inter', system-ui, sans-serif;
 }
