@@ -1,6 +1,3 @@
-cd ~/universidade-meu
-
-cat > app/page.tsx << 'EOF'
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -65,6 +62,3 @@ export default function Home() {
     </div>
   );
 }
-EOF
-
-echo "✅ Landing page corrigida (Torne-se Mestre e Ver Mapa)"
