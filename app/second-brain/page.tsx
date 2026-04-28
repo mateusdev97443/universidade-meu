@@ -1,8 +1,13 @@
-export default function second_brainPage() {
+import { SecondBrain } from "@/components/second-brain";
+
+export default function SecondBrainPage() {
   return (
-    <div className="max-w-6xl mx-auto p-6">
-      <h1 className="text-4xl font-bold mb-4">second brain</h1>
-      <p className="text-ice-muted">Conteúdo em construção. Em breve, a melhor experiência de aprendizado.</p>
+    <div className="max-w-7xl mx-auto p-6">
+      <h1 className="text-4xl font-bold mb-2">🧠 Second Brain – Mapa do Conhecimento</h1>
+      <p className="text-ice-muted mb-6">
+        Visualize como os conceitos se conectam. Clique e arraste para explorar.
+      </p>
+      <SecondBrain />
     </div>
   );
 }
