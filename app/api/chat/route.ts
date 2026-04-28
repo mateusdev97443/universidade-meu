@@ -18,7 +18,7 @@ export async function POST(req: Request) {
       body: JSON.stringify({
         model: 'gpt-3.5-turbo',
         messages: [
-          { role: 'system', content: 'Você é o Jarvis, assistente de uma universidade de front-end chamada NEXUS. Seja didático, direto e friendly.' },
+          { role: 'system', content: 'Você é o Jarvis, assistente de front-end da NEXUS. Seja didático, direto e friendly.' },
           ...messages
         ],
         temperature: 0.7,
@@ -34,7 +34,6 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Erro ao comunicar com OpenAI' }, { status: 500 });
   }
 }
-
 
 
 
