@@ -2,6 +2,11 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { aulas } from "@/data/aulas";
 
+// Gera todas as páginas estáticas no build
+export async function generateStaticParams() {
+  return Object.keys(aulas).map((slug) => ({ slug }));
+}
+
 export default function FaculdadeSlugPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const faculdade = aulas[slug as keyof typeof aulas];
@@ -9,8 +14,16 @@ export default function FaculdadeSlugPage({ params }: { params: { slug: string }
 
   return (
     <div className="max-w-4xl mx-auto p-6">
-      <h1 className="text-4xl font-bold mb-2">{slug.replace(/^./, c => c.toUpperCase())}</h1>
-      <p className="text-ice-muted mb-8">Conteúdo de elite</p>
+      <h1 className="text-4xl font-bold mb-2">
+        {slug === "onboarding" && "🚀 Onboarding Profissional"}
+        {slug === "fundamentosWeb" && "🌐 Fundamentos Profundos da Web"}
+        {slug === "cssModerno" && "🎨 CSS Moderno"}
+        {slug === "fundamentos" && "Faculdade dos Fundamentos"}
+        {slug === "javascript" && "Faculdade JavaScript"}
+        {slug === "react" && "Faculdade React"}
+        {!["onboarding","fundamentosWeb","cssModerno","fundamentos","javascript","react"].includes(slug) && slug}
+      </h1>
+      <p className="text-ice-muted mb-8">{faculdade.length} aulas disponíveis</p>
       <div className="space-y-4">
         {faculdade.map((aula, idx) => (
           <Link key={aula.slug} href={`/sala-de-aula/${slug}/${aula.slug}`}>
