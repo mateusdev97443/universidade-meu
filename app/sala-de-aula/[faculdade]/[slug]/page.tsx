@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { aulas } from "@/data/aulas";
 
 export default function AulaPage({ params }: { params: { faculdade: string; slug: string } }) {
@@ -25,7 +26,7 @@ export default function AulaPage({ params }: { params: { faculdade: string; slug
         <p className="text-ice-muted">{aula.desafio}</p>
         <button className="mt-4 bg-eletric text-obsidian px-4 py-2 rounded-full">Marcar como concluído (simular)</button>
       </div>
-      <div className="mt-8 flex justify-between">
+      <div className="mt-8">
         <Link href={`/faculdades/${faculdade}`} className="text-eletric">← Voltar para faculdade</Link>
       </div>
     </div>
