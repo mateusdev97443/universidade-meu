@@ -10,6 +10,7 @@ export function Navbar() {
   const links = [
     { href: "/jornada", label: "Jornada" },
     { href: "/painel", label: "Painel" },
+    { href: "/faculdades", label: "Faculdades" },
     { href: "/mestres-ia", label: "Mestres IA" },
     { href: "/pratica", label: "Prática" },
     { href: "/entrevistas", label: "Entrevistas" },
