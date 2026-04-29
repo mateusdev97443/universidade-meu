@@ -1,11 +1,18 @@
 import Link from "next/link";
+import { aulas } from "@/data/aulas";
 
-const faculdadesList = [
-  { slug: "fundamentos", nome: "Faculdade dos Fundamentos", desc: "HTML, CSS, lógica.", icone: "📘" },
-  { slug: "javascript", nome: "Faculdade JavaScript", desc: "Domínio profundo em JS.", icone: "⚡" },
-  { slug: "react", nome: "Faculdade React", desc: "Maestria React.", icone: "⚛️" },
-  { slug: "arquitetura", nome: "Faculdade Arquitetura Front-End", desc: "Design systems, performance.", icone: "🏗️" },
-];
+const faculdadesList = Object.keys(aulas).map(key => ({
+  slug: key,
+  nome: key === "fundamentos" ? "Faculdade dos Fundamentos (HTML/CSS básico)"
+        : key === "javascript" ? "Faculdade JavaScript (Avançado)"
+        : key === "react" ? "Faculdade React"
+        : key === "onboarding" ? "🚀 Onboarding Profissional"
+        : key === "fundamentosWeb" ? "🌐 Fundamentos Profundos da Web"
+        : key === "cssModerno" ? "🎨 CSS Moderno"
+        : key.replace(/^./, c => c.toUpperCase()),
+  descricao: `${aulas[key].length} aulas disponíveis`,
+  icone: key === "onboarding" ? "🛠️" : key === "fundamentosWeb" ? "📡" : key === "cssModerno" ? "🎨" : "📚"
+}));
 
 export default function FaculdadesPage() {
   return (
@@ -18,7 +25,7 @@ export default function FaculdadesPage() {
             <div className="bg-obsidian-card border border-border rounded-xl p-6 hover:border-eletric transition cursor-pointer">
               <div className="text-5xl mb-3">{fac.icone}</div>
               <h2 className="text-2xl font-semibold">{fac.nome}</h2>
-              <p className="text-ice-muted mt-2">{fac.desc}</p>
+              <p className="text-ice-muted mt-2">{fac.descricao}</p>
             </div>
           </Link>
         ))}
