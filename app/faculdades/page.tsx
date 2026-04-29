@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { aulas } from "@/data/aulas";
 
-const faculdadesList = Object.keys(aulas).map(key => ({
+type FaculdadeKey = keyof typeof aulas;
+
+const faculdadesList = (Object.keys(aulas) as FaculdadeKey[]).map(key => ({
   slug: key,
   nome: key === "fundamentos" ? "Faculdade dos Fundamentos (HTML/CSS básico)"
         : key === "javascript" ? "Faculdade JavaScript (Avançado)"
